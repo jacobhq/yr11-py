@@ -18,7 +18,7 @@ def is_move_valid(item):
         print("You must be on the same side as the item you wish to move. Try again!")
         return False
 
-def check_won():
+def check_outcome():
     global lost
     global won
     if chicken == grain and farmer != chicken:
@@ -41,21 +41,21 @@ while won != True and lost != True:
                 break
             fox = not fox
             farmer = not farmer
-            check_won()
+            check_outcome()
         case "chicken":
             if is_move_valid(chicken) == False:
                 break
             chicken = not chicken
             farmer = not farmer
-            check_won()
+            check_outcome()
         case "grain":
             if is_move_valid(grain) == False:
                 break
             grain = not grain
             farmer = not farmer
-            check_won()
+            check_outcome()
         case "":
             farmer = not farmer
-            check_won()
+            check_outcome()
         case _:
             print("Invalid choice, please choose either fox, chicken or grain")
