@@ -9,10 +9,8 @@ player = 1
 def init_board():
     board = []
     for i in range(6):
-        row = []
-        for j in range(7):
-            row.append("⚪")
-            board.append(row)
+        row = ["⚪"] * 7
+        board.append(row)
     return board
 
 board = init_board()
